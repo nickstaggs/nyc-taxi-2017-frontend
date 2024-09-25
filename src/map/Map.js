@@ -33,11 +33,11 @@ class MapView extends React.Component {
         svg.call(this.zoom);
     }
 
-    zoomed() {
+    zoomed(event) {
         var g = d3.select("g");
 
-        g.style("stroke-width", .25 / d3.event.transform.k + "px");
-        g.attr("transform", d3.event.transform);
+        g.style("stroke-width", .25 / event.transform.k + "px");
+        g.attr("transform", event.transform);
     }
 
     renderMap() {
